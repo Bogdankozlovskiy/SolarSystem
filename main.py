@@ -6,7 +6,7 @@ from utils import SolarObject, Rocket
 
 pygame.init()
 
-moon = SolarObject("moon", 1 + 0j, 500 + 110j, 10000, 3_474_800, (0, 0, 255), SCALE, my_font, (0, 0, 0), (850, 0))
+moon = SolarObject("moon", 1 + 0j, 500 + 110j, 7.3476 * 10 ** 22, 3_474_800, (0, 0, 255), SCALE, my_font, (0, 0, 0), (850, 0))
 earth = SolarObject("earth", 0 + 0j, 500 + 500j, 5.972 * 10 ** 24, 12_742_000, (0, 255, 0), SCALE, my_font, (0, 0, 0), (850, 20))
 rocket = Rocket("rocket", 0 + 0j, 10 + 10j, 1000, 5, (255, 0, 0), SCALE, my_font, (0, 0, 0), (850, 40))
 key_stat = {locals.K_a: False, locals.K_s: False, locals.K_d: False, locals.K_w: False}

@@ -45,7 +45,7 @@ class SolarObject:
             points = (self.position, (int(line_pos_1.imag), int(line_pos_1.real)), (int(line_pos_2.imag), int(line_pos_2.real)))
             pygame.draw.lines(surface, (100, 100, 100), False, points)
             object_surface = self.font.render(self.name, False, self.font_color)
-            name_position = line_pos_1 + (-25 + 0j)
+            name_position = line_pos_1 + (-self.font.get_linesize() + 0j)
             surface.blit(object_surface, (int(name_position.imag), int(name_position.real)))
 
 
