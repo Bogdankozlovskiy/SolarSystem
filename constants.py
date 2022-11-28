@@ -1,9 +1,11 @@
 import pygame
+import PygameUtils as pu
 
 
 pygame.font.init()
 my_font = pygame.font.SysFont('Comic Sans MS', 20)
 clock = pygame.time.Clock()
+clock_is_avalible_checkbox = pu.checkbox((255, 0, 0), 740, 10, 10, 10, text="tick available", size=20)
 screen = pygame.display.set_mode([1000, 1000])
 SCALE = 10 ** 6
 G = 6.67430 * 10 ** -11
