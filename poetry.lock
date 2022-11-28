@@ -1,0 +1,15 @@
+[[package]]
+name = "pygame"
+version = "2.1.2"
+description = "Python Game Development"
+category = "dev"
+optional = false
+python-versions = ">=3.6"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.9"
+content-hash = "5131afe338f49ed181424d37ae4a8fe569be92f1f67701721d97b1d7694621c7"
+
+[metadata.files]
+pygame = []
