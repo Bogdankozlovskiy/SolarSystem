@@ -2,14 +2,26 @@
 name = "pygame"
 version = "2.1.2"
 description = "Python Game Development"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
+
+[[package]]
+name = "utils-pygame"
+version = "0.0.1"
+description = "A compilation of utility tools for pygame"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+pygame = "*"
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "5131afe338f49ed181424d37ae4a8fe569be92f1f67701721d97b1d7694621c7"
+content-hash = "2cb8d2365a86bd54088428a86025474a28dfc644389711fa4cc874ec2fc90641"
 
 [metadata.files]
 pygame = []
+utils-pygame = []
