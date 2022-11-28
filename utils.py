@@ -3,7 +3,7 @@ from dataclasses import dataclass
 import pygame
 from pygame import locals
 
-from constants import G
+from constants import G, SCALE
 
 
 @dataclass
@@ -14,7 +14,6 @@ class SolarObject:
     weight: int
     diameter: int
     color: tuple
-    scale: int
     font: pygame.font.Font
     font_color: tuple
     speed_position: tuple
@@ -26,17 +25,23 @@ class SolarObject:
     def distance(self, other_position):
         return self._position - other_position
 
-    def change_position(self):
-        self._position += self.speed
+    def change_position(self, dt=None):
+        if dt:
+            self._position += self.speed * dt
+        else:
+            self._position += self.speed
 
-    def change_speed(self, other):
+    def change_speed(self, other, dt=None):
         dif_pos = other.distance(self._position)
-        force = G * other.weight / ((abs(dif_pos) * self.scale) ** 2)
-        self.speed += rect(force, phase(dif_pos))
+        force = G * other.weight / ((abs(dif_pos) * SCALE) ** 2)
+        du = rect(force, phase(dif_pos))
+        if dt:
+            du *= dt
+        self.speed += du
 
     def draw(self, surface):
         speed_surface = self.font.render(f'{self.name} {abs(self.speed):.2f} km/s', False, self.font_color)
-        scaled_diameter = int(self.diameter / self.scale)
+        scaled_diameter = int(self.diameter / SCALE)
         pygame.draw.circle(surface, self.color, self.position, scaled_diameter)
         surface.blit(speed_surface, self.speed_position)
         if scaled_diameter < 3:
